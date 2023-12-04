@@ -147,7 +147,7 @@
                         <td>". $count++. "</td>
                         <td>". ucwords($key['order_number']) ."</td>
                         <td>". ucwords($key['product']) ."</td>
-                        <td><img src='../../". $key['product_image'] ."' alt='". $key['product'] ."' style='width:50px; height:50px; border-radius:5px' /></td>
+                        <td><img src='../". $key['product_image'] ."' alt='". $key['product'] ."' style='width:50px; height:50px; border-radius:5px' /></td>
                         <td>&#8358;". $key['price'] ."</td>
                         <td>". $key['quantity'] ."</td>
                         <td>&#8358;". $key['total_price'] ."</td>
@@ -205,7 +205,7 @@
                         <td>". $count++. "</td>
                         <td>". ucwords($key['product']) ."</td>
                         <td>". $key['price'] ."</td>
-                        <td><img src='../../". $key['product_image'] ."' alt='". $key['product'] ."' style='width:50px; height:50px; border-radius:5px' /></td>
+                        <td><img src='../". $key['product_image'] ."' alt='". $key['product'] ."' style='width:50px; height:50px; border-radius:5px' /></td>
                         <td>". DataBase::dateFormat($key['created_at']) ."</td>
                         <td>
                         <button class='btn btn-sm'><i class='fa fa-eye text-success' onclick='viewProductButton(". $key['id'] .")' style='font-size:15px'></i></button>|<button class='btn btn-sm'><i class='fa fa-pencil text-warning' onclick='editProductButton(". $key['id'] .")' style='font-size:15px'></i></button>
@@ -250,7 +250,7 @@
                     <input type="text" id="short_description" title="Edit '.$key['short_description'].'" class="form-control" name="" value="'.$key['short_description'].'">
                 </div>
                 <div class="form-group">
-                    <img src="../../../'.$key['product_image'].'" alt="'.$key['product'].'" style="width:400px;height:400px;border-radius:10px;" />
+                    <img src="../'.$key['product_image'].'" alt="'.$key['product'].'" style="width:400px;height:400px;border-radius:10px;" />
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
@@ -273,26 +273,34 @@
                 $outPut .='
                 <div class="form-group">
                     <label for="price">product</label>
-                    <input type="text" id="product" title="Edit '.$key['product'].'" class="form-control" name="" value="'.$key['product'].'">
+                    <input type="text" id="product" title="Edit '.$key['product'].'" class="form-control" name="product" value="'.$key['product'].'">
+                    <input type="hidden" class="form-control" name="id" value="'.$key['entity_guid'].'">
                 </div>
                 <div class="form-group">
                     <label for="price">Price</label>
-                    <input type="text" id="price" title="Edit '.$key['price'].'" class="form-control" name="" value="'.$key['price'].'">
+                    <input type="text" id="price" title="Edit '.$key['price'].'" class="form-control" name="price" value="'.$key['price'].'">
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select value="'.$key['category'].'" name="category">
+                        <option value="'.$key['category'].'"></option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="weight">Weight</label>
-                    <input type="text" id="weight" title="Edit '.$key['weight'].'" class="form-control" name="" value="'.$key['weight'].'">
+                    <input type="text" id="weight" title="Edit '.$key['weight'].'" class="form-control" name="weight" value="'.$key['weight'].'">
                 </div>
                 <div class="form-group">
                     <label for="short_description">Short Description</label>
-                    <input type="text" id="short_description" title="Edit '.$key['short_description'].'" class="form-control" name="" value="'.$key['short_description'].'">
+                    <input type="text" id="short_description" title="Edit '.$key['short_description'].'" class="form-control" name="short_description" value="'.$key['short_description'].'">
                 </div>
                 <div class="form-group">
-                    <img src="../../../'.$key['product_image'].'" alt="'.$key['product'].'" style="width:400px;height:400px;border-radius:10px;" />
+                    <img src="../'.$key['product_image'].'" alt="'.$key['product'].'" style="width:400px;height:400px;border-radius:10px;" />
+                    <input type="file" id="upload_image" title="Edit Image" class="form-control" name="upload_image">
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea class="form-control" id="description" value="'.$key['description'].'" title="Edit Description">'.$key['description'].'</textarea>
+                    <textarea class="form-control" id="description" value="'.$key['description'].'" name="description" title="Edit Description">'.$key['description'].'</textarea>
                 </div>
                 ';
             }

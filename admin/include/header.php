@@ -80,7 +80,7 @@
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item" href="../../auth/logout">
+              <a class="dropdown-item" href="../auth/logout">
                 <i class="ti-power-off text-danger"></i>
                 Logout
               </a>

@@ -41,7 +41,7 @@
  ?>
 
 <script>
-  // List Category
+  // List Products
   $( document ).ready(function() {
     $.ajax({
         url: '../../libs/ajaxGet.php?get=206',
@@ -82,7 +82,7 @@ function viewProductButton(id) {
 
 // Edit function
 function editProductButton(id) {
-  $('#staticBackdrop').modal('show');
+  $('#editproductModal').modal('show');
 
   $.ajax({
     url: '../../libs/ajaxGet.php?get=208&editprod='+id,

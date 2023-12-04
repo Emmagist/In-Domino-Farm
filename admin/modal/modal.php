@@ -74,7 +74,7 @@
   </div>
 </div>
 
-<!-- View User Modal -->
+<!-- View Product Modal -->
 <div class="modal fade" id="productModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -85,10 +85,6 @@
         </button>
       </div> 
       <form action="" method="post" id="editUsergoryForm">
-            <div class="form-group">
-                <li class="alert alert-success list-unstyled editCategorySuccess" style="display:none;"></li>
-                <li class="alert alert-danger list-unstyled editCategoryError" style="display:none;"></li>
-            </div>
             <div class="modal-body" id="viewProductModalBody">
             </div>
             <div class="modal-footer">
@@ -100,12 +96,12 @@
   </div>
 </div>
 
-<!-- View User Modal -->
-<div class="modal fade" id="productModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- View Edit Product Modal -->
+<div class="modal fade" id="editproductModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="staticBackdropLabel">View Product</h4>
+        <h4 class="modal-title" id="staticBackdropLabel">Edit Product</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true" title="Close">&times;</span>
         </button>
