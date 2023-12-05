@@ -241,7 +241,7 @@
                             $_SESSION['name'] = $userInfo['full_name'];
                             $db->set('login', true);
                             if ($_SESSION['role'] == 1) {
-                                header('Location: ../index');
+                                header('Location: ../../index');
                             }else {
                                 $errors['role'] = "Sorry you do not have access to the page you're requesting for!";
                             }
