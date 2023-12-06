@@ -93,7 +93,7 @@ function editProductButton(id) {
     processData: false,
     // cache: false,
     success: (param) => { 
-      if (param) {
+      if (param) { console.log(param)
         $('#editProductModalBody').html(param);
       }
     },

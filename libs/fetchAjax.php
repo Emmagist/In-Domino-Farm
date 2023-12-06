@@ -184,6 +184,7 @@ if ($pg == 204) {
     $success = '';
     $id = $db->escape($_POST['id']);
     $product = $db->escape($_POST['product']);
+    // $category = $db->escape($_POST['category']);
     $price = $db->escape($_POST['price']);
     $weight = $db->escape($_POST['weight']);
     $short_description = $db->escape($_POST['short_description']);
@@ -193,9 +194,9 @@ if ($pg == 204) {
         $error = 'Product name can not be empty!';
     }
 
-    if(empty($category)){
-        $error = 'Category can not be empty!';
-    }
+    // if(empty($category)){
+    //     $error = 'Category can not be empty!';
+    // }
 
     if(empty($price)){
         $error = 'Price can not be empty!';
@@ -214,8 +215,8 @@ if ($pg == 204) {
     }
 
     if (empty($error)) {
-        $db->update(TBL_PRODUCT, "category = '$category', category_id = '1', sub_category = '$sub_category', description = '$description'", "id = '$id'");
-        $success = "Category updated successfully...";
+        $db->update(TBL_PRODUCT, "product = '$product', price = '$price', weight = '$weight', short_description = '$short_description', description = '$description'", "entity_guid = '$id'");
+        $success = "Product updated successfully...";
     }
 
     echo json_encode(['error' => $error, 'success' => $success]);

@@ -282,9 +282,11 @@
                 </div>
                 <div class="form-group">
                     <label for="category">Category</label>
-                    <select value="'.$key['category'].'" name="category">
-                        <option value="'.$key['category'].'"></option>
-                    </select>
+                    <select name="category" class="form-control">';
+                        foreach(Ajax::getSingleCategory($key['category_id']) as $cat):
+                        $outPut .='<option value="'.$cat['id'].'">'.$cat['category'].'</option>';
+                        endforeach;
+                    $outPut .='</select>
                 </div>
                 <div class="form-group">
                     <label for="weight">Weight</label>
