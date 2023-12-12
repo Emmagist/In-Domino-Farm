@@ -1,6 +1,6 @@
 <?php
 
-    require_once "../config/db.php";
+    require_once "../config/mailer.php";
     // require_once "../emailVerification.php";
     // require_once "../phpMailer.php";
 

@@ -136,7 +136,6 @@ if ($pg == 203) {
     $success = "";
     $full_name = $db->escape($_POST['full_name']);
     $email = $db->escape($_POST['email']);
-    $password = $db->escape($_POST['password']);
 
     if (empty($full_name)) {
         $error = "Full Name is required!";
@@ -144,10 +143,6 @@ if ($pg == 203) {
 
     if (empty($email)) {
         $error = "Email is required!";
-    }
-
-    if (empty($password)) {
-        $error = "Password is required!";
     }
 
     if ($db->validateEmail($email) == false) {
@@ -160,6 +155,8 @@ if ($pg == 203) {
 
     if (empty($errors)) {
 
+        $password = DataBase::autoGenPass();
+
         $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
         $user_guid = $db->entityGuid();
@@ -167,7 +164,12 @@ if ($pg == 203) {
         $result = $db->saveData(TBL_ADMIN, "user_guid = '$user_guid', role_id = '1', full_name = '$full_name', email = '$email', password = '$hash_password'");
 
         if ($result) {
-            $success ="Registration Successful";
+            $mailer = Mailer::sendAdminSignupDetails($email, $password);
+
+            if ($mailer) {
+                $success ="Registration Successful";
+            }
+            
         }
     }else{
         $error = "Something went wrong!";
