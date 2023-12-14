@@ -33,7 +33,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="admin/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="admin/images/favicon.pn" />
+  <link rel="shortcut icon" href="admin/images/logo-png.png" />
 </head>
 <body>
   <div class="container-scroller">
