@@ -79,16 +79,10 @@
             return $db->selectData(TBL_PRODUCT, "*", "id = '$id'");
         }
 
-        public static function getAdminByUsernameOrEmail($email)
+        public static function getAdminEmail($email)
         {
             global $db;
-            return $db->selectData(TBL_USERS, "*", "email = '$email'");
-        }
-
-        public static function getInvestorByUsernameOrEmail($email)
-        {
-            global $db;
-            return $db->selectData(TBL_SYSTEM_USER, "*", "email = '$email' OR username = '$email'");
+            return $db->selectData(TBL_ADMIN, "*", "email = '$email'");
         }
 
         public static function getUserByEmail($email)

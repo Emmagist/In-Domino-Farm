@@ -40,6 +40,9 @@
                 <div class="form-group">
                   <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" name="email">
                 </div>
+                <div class="form-group">
+                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword" placeholder="******" name="password">
+                </div>
                 <!-- <div class="mb-4">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
